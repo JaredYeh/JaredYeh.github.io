@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Let's Have Fun!</h1>
+            <button class='panel-btn' data-panelid="panel1">#btn1</button>
+            <button class='panel-btn' data-panelid="panel2">#btn2</button>
+            <button class='panel-btn' data-panelid="panel3">#btn3</button>
+            <button class='panel-btn' data-panelid="panel4">#btn4</button>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <div id="panel1" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel1
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div id="panel2" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel2
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div id="panel3" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel3
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div id="panel4" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel4
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/jquery-3.5.1.js"></script>
+
+    <script>
+        $(function(){
+            const content='这是点击过的痕迹';
+            $('.panel-btn').on('click',function(){
+                var panelid=$(this).attr('data-panelid');
+                $('#'+panelid).toggle()
+                $('#'+panelid+' .panel-body').html(content)
+            })
+        });
+    </script>
+</body>
+</html>
